@@ -1,0 +1,90 @@
+{
+  "info": {
+    "name": "News API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create News",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Test News Title\",\n    \"content\": \"This is a test news content for Postman testing.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/news",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "news"]
+        }
+      }
+    },
+    {
+      "name": "Get All New News",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/news",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "news"]
+        }
+      }
+    },
+    {
+      "name": "Get Archived News",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/news/archived",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "news", "archived"]
+        }
+      }
+    },
+    {
+      "name": "Archive News",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:5000/api/news/{{newsId}}/archive",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "news", "{{newsId}}", "archive"]
+        }
+      }
+    },
+    {
+      "name": "Delete News",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:5000/api/news/{{newsId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "news", "{{newsId}}"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "newsId",
+      "value": "your-news-id-here",
+      "type": "string"
+    }
+  ]
+} 
